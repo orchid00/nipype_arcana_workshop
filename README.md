@@ -8,9 +8,14 @@
 [![GitHub HitCount](http://hits.dwyl.io/MonashBI/nipype_arcana_workshop.svg)](http://hits.dwyl.io/MonashBI/nipype_arcana_workshop)
 [![Docker Hub](https://img.shields.io/docker/pulls/monashbi/nipype_arcana_workshop.svg?maxAge=2592000)](https://hub.docker.com/r/monashbi/nipype_arcana_workshop/)
 
-This repository contains everything for the *Automating Neuroimaging Analysis Workflows with Nipype, Arcana and Banana* workshop to be held at Swinburne University on the 15 of November 2019 [(registration)](https://www.eventbrite.com.au/e/automating-neuroimaging-analysis-workflows-with-nipype-arcana-and-banana-registration-69832758661). Many of the materials for this course have been adpated from [Michael Notter's](https://github.com/miykael) excellent [Nipype tutorial](https://github.com/miykael/nipype_tutorial) and a series of workshops he and [Peer Herholz](https://github.com/PeerHerholz) have run on "Python in neuroimaging" ([Cambridge 2018](https://nbviewer.jupyter.org/github/miykael/workshop_cambridge/blob/master/program.ipynb) and [Marburg 2019](https://nbviewer.jupyter.org/github/PeerHerholz/workshop_marburg/blob/master/program.ipynb)).
+This repository contains everything for the *Automating Neuroimaging Analysis Workflows with Nipype, Arcana and Banana* workshop to be held at Swinburne University on the 15 of November 2019 [(registration)](https://www.eventbrite.com.au/e/automating-neuroimaging-analysis-workflows-with-nipype-arcana-and-banana-registration-69832758661). Many of the materials for this course have been adapted from [Michael Notter's](https://github.com/miykael) excellent [Nipype tutorial](https://github.com/miykael/nipype_tutorial) and a series of workshops he and [Peer Herholz](https://github.com/PeerHerholz) have run on "Python in neuroimaging" ([Cambridge 2018](https://nbviewer.jupyter.org/github/miykael/workshop_cambridge/blob/master/program.ipynb) and [Marburg 2019](https://nbviewer.jupyter.org/github/PeerHerholz/workshop_marburg/blob/master/program.ipynb)).
 
-If you have access to the [Characterisation Virtual Laboratory (CVL)](https://www.cvl.org.au) then all the requirements are already installed and ready for you to use. However, if you would like to run the materials from your own system there are (at least) three ways that you can configure it:
+If you get access to the [Characterisation Virtual Laboratory (CVL)](https://www.cvl.org.au) before the workshop _recommended option_, then all the software tool requirements are already installed and ready for you to use. 
+To create an account on CVL@ MASSIVE you need your institutional email. Follow the instructions here: https://www.cvl.org.au/cvl-desktop/cvl-accounts and join project **ds67**.
+The CVL aims at giving you (and researchers in Australia) resources such as compute nodes, RAM and GPU to do computational analysis through a virtual desktop. It has all the software required installed and runs using the high performance compute power of MASSIVE.
+If you have specific questions or issues with the creation of your account, feel free to email help@massive.org.au or check the useful [documentation](https://docs.massive.org.au/).
+
+If you would like to run the materials from your own system there are (at least) three ways that you can configure it, _make sure you do this before the day of the workshop_:
 
 ## 1. Docker
 
@@ -35,7 +40,7 @@ Once the download finished, proceed with the following steps:
 3. Replace the hash number ```20f109eba8e4``` after `http://` with `localhost` or your local IP (probably `192.168.99.100`) if you're on windows.
 4. Once Jupyter Notebook is open, click on the `program.ipynb` notebook, and you're good to go.
 
-And if you want to have **access to the output data created within the docker container**, add the command  `-v /path/to/your/output_folder:/output` before `monashbi/nipype_arcana_workshop`, where `/path/to/your/output_folder` should be a free folder on your system, such as `/User/your_account/Desktop/output`.
+And if you want to have **access to the output data created within the docker container**, add the command  `-v /path/to/your/output_folder:/output` before `monashbi/nipype_arcana_workshop`, where `/path/to/your/output_folder` should be a folder on your system, such as `/User/your_account/Documents/projectBanana/output`.
 
 ## Some useful Docker Commands
 
@@ -63,7 +68,7 @@ And if you want to have **access to the output data created within the docker co
 
 ## 2. Native installation in virtual environment
 
-If you don't care about some of the software dependencies, or have them already installed on your system, you can use pip or conda to create the necessary python environment to run the notebooks. While it is possible to install the dependencies globally on your system it is highly recommended to virtualize your installation so it doesn't mess up any other programs that you use.
+If you don't care about some of the software dependencies, or have them already installed on your system, you can use pip or conda to create the necessary python environment to run the notebooks. While it is possible to install the dependencies globally on your system it is highly recommended to virtualise your installation so it doesn't mess up any other programs that you use.
 
 ### Option 1: Python 3 + Pip + Venv
 
@@ -90,9 +95,9 @@ Conda integrates package management for Python and non-Python dependencies into 
 
 Once you have your virtual environment installed (either by `venv` or `conda`) you should download this repository and start Jupyter notebook with the following commands:
 
-1. Download the notebooks in this repository ([here](https://github.com/MonashBI/nipype_arcana_workshop/archive/master.zip)), save them in the desired location, i.e. (`Desktop/workshop`).
-2. Download the three datasets [adhd](https://www.dropbox.com/sh/wl0auzjfnp2jia3/AAChCae4sCHzB8GJ02VHGOYQa?dl=1), [ds000114](https://www.dropbox.com/sh/s0m8iz8fer3j5el/AACMamy4DyTMHMBud1IVgEDka?dl=1) and [ds000228](https://drive.google.com/file/d/1TWMVjjsBzWJvOx_uq-YVbJU4Yw0Ob0Wh/view?usp=sharing) and put them into the workshop folder, i.e. (`Desktop/workshop`).
-3. Go into the folder where you saved the just downloaded notebooks (i.e. `Desktop/workshop`) and run the following command from the folder that contains the `program.ipynb` notebook: `jupyter notebook program.ipynb`
+1. Download the notebooks from this repository ([here](https://github.com/MonashBI/nipype_arcana_workshop/archive/master.zip)), save them in the desired location, i.e. (`/User/your_account/Documents/projectBanana/`).
+2. Download the three datasets [adhd](https://www.dropbox.com/sh/wl0auzjfnp2jia3/AAChCae4sCHzB8GJ02VHGOYQa?dl=1), [ds000114](https://www.dropbox.com/sh/s0m8iz8fer3j5el/AACMamy4DyTMHMBud1IVgEDka?dl=1) and [ds000228](https://drive.google.com/file/d/1TWMVjjsBzWJvOx_uq-YVbJU4Yw0Ob0Wh/view?usp=sharing) and put them into the workshop folder, i.e. (`/User/your_account/Documents/projectBanana/data`).
+3. Go into the folder where you saved the just downloaded notebooks (i.e. `/User/your_account/Documents/projectBanana/data`) and run the following command from the folder that contains the `program.ipynb` notebook: `jupyter notebook program.ipynb`
 
 
 ## 3. Jupyter NBViewer
